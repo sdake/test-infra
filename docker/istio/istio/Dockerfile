@@ -14,7 +14,7 @@ EXPOSE 2375
 ENV PATH /usr/local/go/bin:/opt/go/bin:/usr/lib/google-cloud-sdk/bin:/root/.local/bin:${PATH}
 
 # Add entrypoint to start docker
-ADD shared/prow-runner.sh /usr/local/bin/entrypoint
+COPY shared/prow-runner.sh /usr/local/bin/entrypoint
 RUN chmod +rx /usr/local/bin/entrypoint
 
 # Set CI variable which can be checked by test scripts to verify
